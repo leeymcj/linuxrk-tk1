@@ -213,8 +213,8 @@ void rk_procfs_mutex_destroy(int mid)
 ssize_t rk_procfs_read_rset_tasklist(struct file *filp, char *buf, size_t count, loff_t *offp)
 {
 
-	//rk_resource_set_t rset = PDE_DATA(file_inode(filp));
-	rk_resource_set_t rset = PDE(filp->f_path.dentry->d_inode)->data;
+	rk_resource_set_t rset = PDE_DATA(file_inode(filp));
+	//rk_resource_set_t rset = PDE(filp->f_path.dentry->d_inode)->data;
 	struct task_struct *task;
 	char *p = buf;
 
@@ -238,8 +238,8 @@ ssize_t rk_procfs_read_rset_tasklist(struct file *filp, char *buf, size_t count,
 
 ssize_t rk_procfs_read_rset_info(struct file *filp, char *buf, size_t count, loff_t *offp)
 {
-	//rk_resource_set_t rset = PDE_DATA(file_inode(filp));
-	rk_resource_set_t rset = PDE(filp->f_path.dentry->d_inode)->data;
+	rk_resource_set_t rset = PDE_DATA(file_inode(filp));
+	//rk_resource_set_t rset = PDE(filp->f_path.dentry->d_inode)->data;
 	char *p = buf;
 	struct task_struct *task;
 
@@ -267,8 +267,8 @@ ssize_t rk_procfs_read_rset_info(struct file *filp, char *buf, size_t count, lof
 
 ssize_t rk_procfs_read_task_rset(struct file *filp, char *buf, size_t count, loff_t *offp)
 {
-	//int rd_entry = (unsigned long)PDE_DATA(file_inode(filp));
-	int rd_entry = (unsigned long)PDE(filp->f_path.dentry->d_inode)->data;
+	int rd_entry = (unsigned long)PDE_DATA(file_inode(filp));
+	//int rd_entry = (unsigned long)PDE(filp->f_path.dentry->d_inode)->data;
 	char *p = buf;
 
 	if (*offp != 0) return 0;
@@ -281,8 +281,8 @@ ssize_t rk_procfs_read_task_rset(struct file *filp, char *buf, size_t count, lof
 
 ssize_t rk_procfs_read_reserve(struct file *filp, char *buf, size_t count, loff_t *offp)
 {
-	//rk_reserve_t rsv = PDE_DATA(file_inode(filp));
-	rk_reserve_t rsv = PDE(filp->f_path.dentry->d_inode)->data;
+	rk_reserve_t rsv = PDE_DATA(file_inode(filp));
+	//rk_reserve_t rsv = PDE(filp->f_path.dentry->d_inode)->data;
 
 	if (*offp != 0) return 0;
 
@@ -297,8 +297,8 @@ ssize_t rk_procfs_read_reserve(struct file *filp, char *buf, size_t count, loff_
 
 ssize_t rk_procfs_read_mutex(struct file *filp, char *buf, size_t count, loff_t *offp)
 {
-	//int mid = (unsigned long)PDE_DATA(file_inode(filp));
-	int mid = (unsigned long)PDE(filp->f_path.dentry->d_inode)->data;
+	int mid = (unsigned long)PDE_DATA(file_inode(filp));
+	//int mid = (unsigned long)PDE(filp->f_path.dentry->d_inode)->data;
 
 	if (*offp != 0) return 0;
 
