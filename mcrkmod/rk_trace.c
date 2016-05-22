@@ -1400,17 +1400,17 @@ void __rk_pmc_init(void)
 		//pmc_attr.config = 0x68; // ARMV7_PERFCTR_INST_OUT_OF_RENAME_STAGE;
 		pmc_attr.type = PERF_TYPE_HARDWARE,
 		pmc_attr.config = PERF_COUNT_HW_INSTRUCTIONS;
-		rk_perf_event[i][0] = perf_event_create_kernel_counter(&pmc_attr, i, NULL, NULL);
+		rk_perf_event[i][0] = perf_event_create_kernel_counter(&pmc_attr, i, NULL, NULL, NULL);
 		rk_perf_event[i][0]->pmu->start(rk_perf_event[i][0], 0);
 		// CPU Cycles
 		pmc_attr.type = PERF_TYPE_HARDWARE;
 		pmc_attr.config = PERF_COUNT_HW_CPU_CYCLES;
-		rk_perf_event[i][1] = perf_event_create_kernel_counter(&pmc_attr, i, NULL, NULL);
+		rk_perf_event[i][1] = perf_event_create_kernel_counter(&pmc_attr, i, NULL, NULL, NULL);
 		rk_perf_event[i][1]->pmu->start(rk_perf_event[i][1], 0);
 		// Cache Miss (L1)
 		pmc_attr.type = PERF_TYPE_HARDWARE;
 		pmc_attr.config = PERF_COUNT_HW_CACHE_MISSES;
-		rk_perf_event[i][2] = perf_event_create_kernel_counter(&pmc_attr, i, NULL, NULL);
+		rk_perf_event[i][2] = perf_event_create_kernel_counter(&pmc_attr, i, NULL, NULL, NULL);
 		rk_perf_event[i][2]->pmu->start(rk_perf_event[i][2], 0);
 
 		// L310 setup
