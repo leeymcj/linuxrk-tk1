@@ -651,13 +651,13 @@ int get_address_info(struct mm_struct *mm, unsigned long addr)
 	return 6;	
 }
 
-unsigned long get_mm_counter(struct mm_struct *mm, int member)
+/*unsigned long get_mm_counter(struct mm_struct *mm, int member)
 {
 	long val = 0;
 	val = atomic_long_read(&mm->rss_stat.count[member]);
 	if (val < 0) return 0;
 	return (unsigned long)val;
-}
+}*/
 
 int sys_rk_mem_reserve_show_task_vminfo(int pid)
 {

@@ -11,6 +11,7 @@ obj-y     = fork.o exec_domain.o panic.o printk.o \
 	    hrtimer.o rwsem.o nsproxy.o srcu.o semaphore.o \
 	    notifier.o ksysfs.o cred.o \
 	    async.o range.o groups.o lglock.o smpboot.o
+	    
 
 ifdef CONFIG_FUNCTION_TRACER
 # Do not trace debug files and internal ftrace files
@@ -111,7 +112,7 @@ obj-$(CONFIG_CRASH_DUMP) += crash_dump.o
 obj-$(CONFIG_JUMP_LABEL) += jump_label.o
 obj-$(CONFIG_CONTEXT_TRACKING) += context_tracking.o
 
-obj-$(CONFIG_RK) += rk.o #CONFIG_RK
+obj-$(CONFIG_RK) += rk.o
 
 $(obj)/configs.o: $(obj)/config_data.h
 

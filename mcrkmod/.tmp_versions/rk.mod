@@ -1,0 +1,2 @@
+/usr/src/linuxrk-tk1/mcrkmod/rk.ko
+/usr/src/linuxrk-tk1/mcrkmod/rt_process.o /usr/src/linuxrk-tk1/mcrkmod/rk_sched.o /usr/src/linuxrk-tk1/mcrkmod/cpu_reserve.o /usr/src/linuxrk-tk1/mcrkmod/mem_reserve.o /usr/src/linuxrk-tk1/mcrkmod/resource_set.o /usr/src/linuxrk-tk1/mcrkmod/misc.o /usr/src/linuxrk-tk1/mcrkmod/timer.o /usr/src/linuxrk-tk1/mcrkmod/rk_trace.o /usr/src/linuxrk-tk1/mcrkmod/rk_procfs.o /usr/src/linuxrk-tk1/mcrkmod/rk_mutex.o /usr/src/linuxrk-tk1/mcrkmod/rk_virt.o

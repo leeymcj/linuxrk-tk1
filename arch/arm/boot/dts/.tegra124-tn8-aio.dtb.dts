@@ -1,18 +1,17 @@
 # 1 "arch/arm/boot/dts/tegra124-tn8-aio.dts"
-# 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "arch/arm/boot/dts/tegra124-tn8-aio.dts"
 /dts-v1/;
 
 # 1 "arch/arm/boot/dts/tegra124.dtsi" 1
-# 1 "/usr/src/kernel/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 1
-# 13 "/usr/src/kernel/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h"
-# 1 "/usr/src/kernel/arch/arm/boot/dts/include/dt-bindings/gpio/gpio.h" 1
-# 14 "/usr/src/kernel/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 2
+# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 1
+# 13 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h"
+# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/gpio.h" 1
+# 14 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 2
 # 2 "arch/arm/boot/dts/tegra124.dtsi" 2
-# 1 "/usr/src/kernel/arch/arm/boot/dts/include/dt-bindings/input/input.h" 1
+# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/input/input.h" 1
 # 3 "arch/arm/boot/dts/tegra124.dtsi" 2
-# 1 "/usr/src/kernel/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/arm-gic.h" 1
+# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/arm-gic.h" 1
 
 
 
@@ -20,8 +19,8 @@
 
 
 
-# 1 "/usr/src/kernel/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/irq.h" 1
-# 9 "/usr/src/kernel/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/arm-gic.h" 2
+# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/irq.h" 1
+# 9 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/interrupt-controller/arm-gic.h" 2
 # 4 "arch/arm/boot/dts/tegra124.dtsi" 2
 
 /include/ "tegra124-soc.dtsi"
@@ -4001,7 +4000,7 @@ memory-controller@7001b000 {
 };
 # 10 "arch/arm/boot/dts/tegra124-tn8-aio.dts" 2
 # 1 "arch/arm/boot/dts/tegra124-platforms/tegra124-e1780-pinmux.dtsi" 1
-# 1 "/usr/src/kernel/arch/arm/boot/dts/include/dt-bindings/pinctrl/pinctrl-tegra.h" 1
+# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/pinctrl/pinctrl-tegra.h" 1
 # 2 "arch/arm/boot/dts/tegra124-platforms/tegra124-e1780-pinmux.dtsi" 2
 
 / {

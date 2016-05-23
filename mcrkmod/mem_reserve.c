@@ -57,7 +57,7 @@ struct rk_reserve_ops mem_reserve_ops = {
 // Kernel memory management functions
 int isolate_lru_page(struct page *page);
 void putback_lru_page(struct page *page);
-int page_evictable(struct page *page, struct vm_area_struct *vma);
+int page_evictable(struct page *page);
 int page_referenced(struct page *page, int is_locked,
 				  struct mem_cgroup *cnt,
 				  unsigned long *vm_flags);
@@ -865,7 +865,7 @@ int evict_unreserved_pages(struct task_struct *p)
 	down_read(&mm->mmap_sem);
 	mmap = mm->mmap; 
 
-	if (nr_swap_pages <= 0) return -1;
+	if (get_nr_swap_pages() <= 0) return -1;
 
 	while(mmap)
 	{
@@ -893,7 +893,7 @@ int evict_unreserved_pages(struct task_struct *p)
 			if (page_mapcount(page) > 1) 
 				goto unmap; // shared page
 #endif
-			if (!page_evictable(page, mmap))  
+			if (!page_evictable(page))  
 				goto unmap; // unevictable
 
 			if (!PageLRU(page)) {
@@ -1061,7 +1061,7 @@ int make_task_pages_present_fixup(struct task_struct *p, struct vm_area_struct *
 
 	pgoff = vma->vm_pgoff + ((start - vma->vm_start) >> PAGE_SHIFT);
 	*prev = vma_merge(mm, *prev, start, end, vma->vm_flags, vma->anon_vma,
-		vma->vm_file, pgoff, vma_policy(vma));
+		vma->vm_file, pgoff, vma_policy(vma), NULL);
 	if (*prev) {
 		vma = *prev;
 		goto success;
@@ -1494,9 +1494,9 @@ struct page* rk_alloc_pages(gfp_t gfp_mask, unsigned int order, bool* ret)
 	set_page_private(entry->page, 0);
 	//atomic_set(&entry->page->_count, 1);
 	if (gfp_mask & __GFP_ZERO) { // clear_highpage in highmem.h
-		void *kaddr = kmap_atomic(entry->page, KM_USER0);
+		void *kaddr = kmap_atomic(entry->page);
 		clear_page(kaddr);
-		kunmap_atomic(kaddr, KM_USER0);
+		kunmap_atomic(kaddr);
 	}
 
 	mem_dbg("rk_alloc_pages pid:%d (e:%lx, p:%lx, f:%x, c:%d - gfp:%x)\n", 

@@ -1,17 +1,16 @@
 # 1 "arch/arm/boot/dts/tegra114-pluto.dts"
-# 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "arch/arm/boot/dts/tegra114-pluto.dts"
 /dts-v1/;
 
 /include/ "tegra114.dtsi"
 /include/ "panel-l-720p-5.dts"
-# 1 "/usr/src/kernel/arch/arm/boot/dts/tegra114-platforms/tegra114-pluto-e1580-gpio-default.dtsi" 1
-# 1 "/usr/src/kernel/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 1
-# 13 "/usr/src/kernel/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h"
-# 1 "/usr/src/kernel/arch/arm/boot/dts/include/dt-bindings/gpio/gpio.h" 1
-# 14 "/usr/src/kernel/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 2
-# 2 "/usr/src/kernel/arch/arm/boot/dts/tegra114-platforms/tegra114-pluto-e1580-gpio-default.dtsi" 2
+# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/tegra114-platforms/tegra114-pluto-e1580-gpio-default.dtsi" 1
+# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 1
+# 13 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h"
+# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/gpio.h" 1
+# 14 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 2
+# 2 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/tegra114-platforms/tegra114-pluto-e1580-gpio-default.dtsi" 2
 
 / {
  gpio: gpio {
@@ -85,9 +84,9 @@
  };
 };
 # 6 "arch/arm/boot/dts/tegra114-pluto.dts" 2
-# 1 "/usr/src/kernel/arch/arm/boot/dts/tegra114-platforms/tegra114-pluto-e1580-pinmux.dtsi" 1
-# 1 "/usr/src/kernel/arch/arm/boot/dts/include/dt-bindings/pinctrl/pinctrl-tegra.h" 1
-# 2 "/usr/src/kernel/arch/arm/boot/dts/tegra114-platforms/tegra114-pluto-e1580-pinmux.dtsi" 2
+# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/tegra114-platforms/tegra114-pluto-e1580-pinmux.dtsi" 1
+# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/pinctrl/pinctrl-tegra.h" 1
+# 2 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/tegra114-platforms/tegra114-pluto-e1580-pinmux.dtsi" 2
 
 / {
  pinmux: pinmux {

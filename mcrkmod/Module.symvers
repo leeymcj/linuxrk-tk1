@@ -1,0 +1,2 @@
+0x00000000	init_module	/usr/src/linuxrk-tk1/mcrkmod/rk	EXPORT_SYMBOL
+0x00000000	cleanup_module	/usr/src/linuxrk-tk1/mcrkmod/rk	EXPORT_SYMBOL

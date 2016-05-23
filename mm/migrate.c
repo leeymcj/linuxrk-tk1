@@ -935,7 +935,7 @@ int rk_migrate_page(struct page *from, struct page *to)
 
         rk_migrate_page_buf = to;
         //return unmap_and_move(rk_migrate_page_helper, 0, from, true, false, false);
-        return unmap_and_move(rk_migrate_page_helper, 0, from, false, false, false);
+        return unmap_and_move(rk_migrate_page_helper, 0, from, false, false);
 }
 EXPORT_SYMBOL(rk_migrate_page);
 #endif

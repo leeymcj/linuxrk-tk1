@@ -1,16 +1,15 @@
 # 1 "arch/arm/boot/dts/tegra114-roth.dts"
-# 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "arch/arm/boot/dts/tegra114-roth.dts"
 /dts-v1/;
 
 /include/ "tegra114.dtsi"
-# 1 "/usr/src/kernel/arch/arm/boot/dts/tegra114-platforms/tegra114-roth-gpio-default.dtsi" 1
-# 1 "/usr/src/kernel/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 1
-# 13 "/usr/src/kernel/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h"
-# 1 "/usr/src/kernel/arch/arm/boot/dts/include/dt-bindings/gpio/gpio.h" 1
-# 14 "/usr/src/kernel/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 2
-# 2 "/usr/src/kernel/arch/arm/boot/dts/tegra114-platforms/tegra114-roth-gpio-default.dtsi" 2
+# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/tegra114-platforms/tegra114-roth-gpio-default.dtsi" 1
+# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 1
+# 13 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h"
+# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/gpio.h" 1
+# 14 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 2
+# 2 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/tegra114-platforms/tegra114-roth-gpio-default.dtsi" 2
 
 / {
  gpio: gpio {
@@ -81,9 +80,9 @@
  };
 };
 # 5 "arch/arm/boot/dts/tegra114-roth.dts" 2
-# 1 "/usr/src/kernel/arch/arm/boot/dts/tegra114-platforms/tegra114-roth-pinmux.dtsi" 1
-# 1 "/usr/src/kernel/arch/arm/boot/dts/include/dt-bindings/pinctrl/pinctrl-tegra.h" 1
-# 2 "/usr/src/kernel/arch/arm/boot/dts/tegra114-platforms/tegra114-roth-pinmux.dtsi" 2
+# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/tegra114-platforms/tegra114-roth-pinmux.dtsi" 1
+# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/pinctrl/pinctrl-tegra.h" 1
+# 2 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/tegra114-platforms/tegra114-roth-pinmux.dtsi" 2
 
 / {
  pinmux: pinmux {

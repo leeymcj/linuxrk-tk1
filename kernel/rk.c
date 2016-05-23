@@ -93,4 +93,3 @@ EXPORT_SYMBOL(rk_trace_schedule_hook);
 EXPORT_SYMBOL(rk_trace_fn_hook);
 
 #endif
-

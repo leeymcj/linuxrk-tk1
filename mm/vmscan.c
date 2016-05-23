@@ -168,7 +168,7 @@ static int debug_shrinker_show(struct seq_file *s, void *unused)
 
 	down_read(&shrinker_rwsem);
 	list_for_each_entry(shrinker, &shrinker_list, list) {
-		char name[64];
+		//char name[64];
 		int num_objs;
 
 		num_objs = shrinker->shrink(shrinker, &sc);
@@ -770,7 +770,7 @@ static unsigned long shrink_page_list(struct list_head *page_list,
 
 		sc->nr_scanned++;
 #ifdef CONFIG_RK_MEM
-                if (!called_by_rk && unlikely(!page_evictable(page, NULL)))
+                if (!called_by_rk && unlikely(!page_evictable(page)))
 #else
 		if (unlikely(!page_evictable(page)))
 #endif
@@ -1208,6 +1208,36 @@ static unsigned long isolate_lru_pages(unsigned long nr_to_scan,
 				    nr_taken, mode, is_file_lru(lru));
 	return nr_taken;
 }
+
+
+
+/*
+ * clear_active_flags() is a helper for shrink_active_list(), clearing
+ * any active bits from the pages in the list.
+ */
+static unsigned long clear_active_flags(struct list_head *page_list,
+                                        unsigned int *count)
+{
+        int nr_active = 0;
+        int lru;
+        struct page *page;
+
+        list_for_each_entry(page, page_list, lru) {
+                int numpages = hpage_nr_pages(page);
+                lru = page_lru_base_type(page);
+                if (PageActive(page)) {
+                        lru += LRU_ACTIVE;
+                        ClearPageActive(page);
+                        nr_active += numpages;
+                }
+                if (count)
+                        count[lru] += numpages;
+        }
+
+        return nr_active;
+}
+
+
 
 /**
  * isolate_lru_page - tries to isolate a page from its LRU list
@@ -3546,13 +3576,14 @@ int rk_page_list_out(struct zone* zone, struct list_head *page_list, int n)
                 .may_writepage = 1,
                 .may_unmap = 1,
                 .may_swap = 1,
-                .swappiness = 60, //vm_swappiness,
+                //.swappiness = 60, //vm_swappiness,
                 .order = 0,
-                .mem_cgroup = NULL,
+                .target_mem_cgroup = NULL,
                 .nodemask = NULL,
                 //.nodemask = nodemask,
                 .nr_to_reclaim = n,
-                .reclaim_mode = RECLAIM_MODE_SYNC,
+                //.reclaim_mode = RECLAIM_MODE_SYNC,
+		.priority = DEF_PRIORITY 
         };
         struct page *page;
         unsigned long nr_freed = n;
@@ -3560,11 +3591,12 @@ int rk_page_list_out(struct zone* zone, struct list_head *page_list, int n)
         unsigned int count[NR_LRU_LISTS] = { 0, };
         unsigned long nr_anon = 0;
         unsigned long nr_file = 0;
+	unsigned long ret, dummy1, dummy2; //CONFIG_RK_TK1
 
         //printk("page_list_out: %d\n", n);
         if (page_list == NULL) return 0;
         // check swap space
-        if (nr_swap_pages <= 0) goto back_to_lru;
+        if (get_nr_swap_pages() <= 0) goto back_to_lru;
 
         //spin_lock_irq(&zone->lru_lock);
         nr_active = clear_active_flags(page_list, count);
@@ -3586,7 +3618,9 @@ int rk_page_list_out(struct zone* zone, struct list_head *page_list, int n)
         //spin_unlock_irq(&zone->lru_lock);
 
         //printk("shrink_page_list\n");
-        shrink_page_list_wrapper(page_list, zone, &sc, true);
+	ret = shrink_page_list_wrapper(page_list, zone, &sc, TTU_UNMAP|TTU_IGNORE_ACCESS, &dummy1, &dummy2, false, true);
+
+        //shrink_page_list_wrapper(page_list, zone, &sc,  $dummy1, $dummy2, true);
         //printk("shrink_page_list done\n");
 back_to_lru:
         // Put back unfreeable pages.

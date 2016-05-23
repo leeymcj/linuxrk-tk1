@@ -6275,7 +6275,7 @@ static const struct trace_print_flags pageflag_names[] = {
 #ifdef CONFIG_MEMORY_FAILURE
 	{1UL << PG_hwpoison,		"hwpoison"	},
 #endif
-#ifdef CONFIG_RK
+#ifdef CONFIG_RK_MEM
         {1UL << PG_mem_reserve,         "rk_mem_rsv"    },
         {1UL << PG_mem_elock,           "rk_mem_elock"  },
 #endif
