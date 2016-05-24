@@ -16,7 +16,7 @@ Requirement: HostLinux must be x86, Jetson ehternet connected, USB Micro-B cable
  
    Bus 006 Device 010: ID 0955:7140 NVidia Corp.
 
-wget https://github.com/leeymcj/linuxrk-tk1/blob/master/flash_R19.3.sh
+https://github.com/leeymcj/linuxrk-tk1/blob/master/flash_R19.3.sh
 
 sudo ./flash_R19.3.sh
 
