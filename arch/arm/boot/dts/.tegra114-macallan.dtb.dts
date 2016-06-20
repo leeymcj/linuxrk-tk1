@@ -1,14 +1,15 @@
 # 1 "arch/arm/boot/dts/tegra114-macallan.dts"
+# 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "arch/arm/boot/dts/tegra114-macallan.dts"
 /dts-v1/;
 
 /include/ "tegra114.dtsi"
 # 1 "arch/arm/boot/dts/tegra114-platforms/tegra114-macallan-e1645-gpio-default.dtsi" 1
-# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 1
-# 13 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h"
-# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/gpio.h" 1
-# 14 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 2
+# 1 "/home/leeymcj/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 1
+# 13 "/home/leeymcj/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h"
+# 1 "/home/leeymcj/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/gpio.h" 1
+# 14 "/home/leeymcj/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 2
 # 2 "arch/arm/boot/dts/tegra114-platforms/tegra114-macallan-e1645-gpio-default.dtsi" 2
 
 / {
@@ -95,7 +96,7 @@
 };
 # 5 "arch/arm/boot/dts/tegra114-macallan.dts" 2
 # 1 "arch/arm/boot/dts/tegra114-platforms/tegra114-macallan-e1645-pinmux.dtsi" 1
-# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/pinctrl/pinctrl-tegra.h" 1
+# 1 "/home/leeymcj/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/pinctrl/pinctrl-tegra.h" 1
 # 2 "arch/arm/boot/dts/tegra114-platforms/tegra114-macallan-e1645-pinmux.dtsi" 2
 
 / {

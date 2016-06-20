@@ -417,6 +417,7 @@
                 CALL(sys_ni_syscall)            /* 404 rk_get_start_of_next_vcpu_period           */
                 CALL(sys_ni_syscall)            /* 405 rk_vchannel                                */
                 CALL(sys_ni_syscall)            /* 406 rk_testing                                 */
+                CALL(sys_ni_syscall)            /* 407 rt_set_period  		                  */
 #endif
 
 

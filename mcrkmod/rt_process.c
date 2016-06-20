@@ -46,7 +46,7 @@
  */
 
 /*
- * rt_process.c: library to support realtime tasks, has utilities like waiting for a period
+ * rt_process.c: library to support realtime tasks, has utilities like waiting for a period, adapt period
  */
 
 #include <rk/rk_mc.h>
@@ -81,6 +81,43 @@ asmlinkage int sys_rt_wait_for_next_period(void)
 		printk("wait_for_next_period: pid %d cpu %d\n", current->pid, cpuid);
 	}
 	sleep_on(&(current->rk_resource_set->depleted_wait));
+	
+	return RK_SUCCESS; 
+
+error_spin_unlock:
+	raw_spin_unlock_irqrestore(&rset->lock, flags);
+	return RK_ERROR;
+} 
+
+asmlinkage int sys_rt_set_period(long long T) //RK_PERIOD
+{
+	rk_resource_set_t rset;
+	unsigned long flags;
+	int cpuid;
+
+	rset = current->rk_resource_set;
+	if (rset == NULL) {
+		printk("rt_wait_for_next_period: task %d has no resource sets.\n", current->pid);
+		return RK_ERROR;
+	}
+
+	raw_spin_lock_irqsave(&rset->lock, flags);
+	if (rset->nr_cpu_reserves < 0) {
+		printk("rt_wait_for_next_period: task %d has no cpu reserves.\n", current->pid);	
+		goto error_spin_unlock;
+	}
+	cpuid = smp_processor_id();
+	raw_spin_unlock_irqrestore(&rset->lock, flags);
+
+	if (debug_rd == rset->rd_entry) {
+		printk("set_period: pid %d cpu %d\n", current->pid, cpuid);
+	}
+
+	//calculate a new capacity
+	cpu_reserve_t cpu = (cpu_reserve_t) current->rk_resource_set->cpu_reserves;
+	cpu->cpu_period_ticks = T;
+	
+	//sleep_on(&(current->rk_resource_set->depleted_wait));
 	
 	return RK_SUCCESS; 
 

@@ -101,6 +101,7 @@ void rk_system_calls_init(void)
 	
 	// For testing
 	sys_call_table[__NR_rk_testing]				= &sys_rk_testing;
+	sys_call_table[__NR_rt_set_period]			= &sys_rt_set_period; //RK_PERIOD
 }
 
 void rk_system_calls_cleanup(void)
@@ -136,6 +137,7 @@ void rk_system_calls_cleanup(void)
 	
 	// For testing
 	sys_call_table[__NR_rk_testing]				= sys_call_table[0];
+	sys_call_table[__NR_rt_set_period]			= sys_call_table[0]; //RK_PERIOD
 }
 
 

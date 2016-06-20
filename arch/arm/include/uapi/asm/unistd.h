@@ -435,6 +435,7 @@
 #define __NR_rk_get_start_of_next_vcpu_period        (__NR_SYSCALL_BASE+404)
 #define __NR_rk_vchannel                             (__NR_SYSCALL_BASE+405)
 #define __NR_rk_testing                              (__NR_SYSCALL_BASE+406)
+#define __NR_rt_set_period                 	     (__NR_SYSCALL_BASE+407)
 #endif
 
 /*

@@ -1,9 +1,10 @@
 # 1 "arch/arm/boot/dts/tegra114-dalmore-e1611-1000-a00-00.dts"
+# 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "arch/arm/boot/dts/tegra114-dalmore-e1611-1000-a00-00.dts"
 /dts-v1/;
 
-# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/tegra114-platforms/tegra114-dalmore-io-e1611.dtsi" 1
+# 1 "/home/leeymcj/linuxrk-tk1/arch/arm/boot/dts/tegra114-platforms/tegra114-dalmore-io-e1611.dtsi" 1
 /include/ "tegra114.dtsi"
 
 / {
@@ -212,12 +213,12 @@
  };
 };
 # 4 "arch/arm/boot/dts/tegra114-dalmore-e1611-1000-a00-00.dts" 2
-# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/tegra114-platforms/tegra114-dalmore-e1611-gpio-default.dtsi" 1
-# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 1
-# 13 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h"
-# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/gpio.h" 1
-# 14 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 2
-# 2 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/tegra114-platforms/tegra114-dalmore-e1611-gpio-default.dtsi" 2
+# 1 "/home/leeymcj/linuxrk-tk1/arch/arm/boot/dts/tegra114-platforms/tegra114-dalmore-e1611-gpio-default.dtsi" 1
+# 1 "/home/leeymcj/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 1
+# 13 "/home/leeymcj/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h"
+# 1 "/home/leeymcj/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/gpio.h" 1
+# 14 "/home/leeymcj/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/gpio/tegra-gpio.h" 2
+# 2 "/home/leeymcj/linuxrk-tk1/arch/arm/boot/dts/tegra114-platforms/tegra114-dalmore-e1611-gpio-default.dtsi" 2
 
 / {
  gpio: gpio {
@@ -295,9 +296,9 @@
  };
 };
 # 5 "arch/arm/boot/dts/tegra114-dalmore-e1611-1000-a00-00.dts" 2
-# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/tegra114-platforms/tegra114-dalmore-e1611-pinmux.dtsi" 1
-# 1 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/pinctrl/pinctrl-tegra.h" 1
-# 2 "/usr/src/linuxrk-tk1/arch/arm/boot/dts/tegra114-platforms/tegra114-dalmore-e1611-pinmux.dtsi" 2
+# 1 "/home/leeymcj/linuxrk-tk1/arch/arm/boot/dts/tegra114-platforms/tegra114-dalmore-e1611-pinmux.dtsi" 1
+# 1 "/home/leeymcj/linuxrk-tk1/arch/arm/boot/dts/include/dt-bindings/pinctrl/pinctrl-tegra.h" 1
+# 2 "/home/leeymcj/linuxrk-tk1/arch/arm/boot/dts/tegra114-platforms/tegra114-dalmore-e1611-pinmux.dtsi" 2
 
 / {
  pinmux: pinmux {

@@ -1,7 +1,7 @@
-/* This file is auto generated, version 7 */
+/* This file is auto generated, version 8 */
 /* SMP PREEMPT */
 #define UTS_MACHINE "arm"
-#define UTS_VERSION "#7 SMP PREEMPT Mon May 23 01:09:00 UTC 2016"
-#define LINUX_COMPILE_BY "root"
-#define LINUX_COMPILE_HOST "tegra-ubuntu"
-#define LINUX_COMPILER "gcc version 4.8.2 (Ubuntu/Linaro 4.8.2-19ubuntu1) "
+#define UTS_VERSION "#8 SMP PREEMPT Fri Jun 17 13:07:14 EDT 2016"
+#define LINUX_COMPILE_BY "leeymcj"
+#define LINUX_COMPILE_HOST "HP"
+#define LINUX_COMPILER "gcc version 4.8.4 (Ubuntu/Linaro 4.8.4-2ubuntu1~14.04.1) "
